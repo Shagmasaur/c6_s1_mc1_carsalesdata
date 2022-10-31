@@ -1,5 +1,5 @@
 USE carsales;
-CREATE TABLE Customer(CustomerId INT PRIMARY KEY, FirstName VARCHAR(20), LastName VARCHAR(20), 	City VARCHAR(20), Rating INT, SalesId INT, FOREIGN KEY (SalesId) REFERENCES salesperson(SalesId));
+CREATE TABLE Customer(CustomerId INT PRIMARY KEY, FirstName VARCHAR(20) NOT NULL, LastName VARCHAR(20) NOT NULL, City VARCHAR(20) NOT NULL, Rating INT NOT NULL, SalesId INT, FOREIGN KEY (SalesId) REFERENCES salesperson(SalesId));
 INSERT INTO Customer VALUES (2001,'Hoffman','Anny','London',100,1001);
 INSERT INTO Customer VALUES (2002,'Giovanni','Jenny','Rome',200,1003);
 INSERT INTO Customer VALUES (2003,'Liu','William','San Jose',100,1002);
@@ -24,3 +24,7 @@ DELETE FROM salesperson WHERE CommisionRate=0;
 UPDATE OrderTable SET Amount=200 WHERE Amount=100;
 UPDATE salesperson SET CommisionRate=28 WHERE CommisionRate=26;
 UPDATE customer SET Rating=150 WHERE Rating=100;
+
+-- Testing Insert
+INSERT INTO OrderTable VALUES(3015,100,'18092000',2050);
+INSERT INTO Customer VALUES (2050,'Jonathan','Bob','Rome',300,1050);
